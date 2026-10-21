@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-20T07:36:22.231035+00:00",
+  "models": {
+    "live": "gemini-3.8-live",
+    "judge": "gemini-3.8-flash"
+  },
+  "caveats": [
+    "WER uses synthetic speech from the same model family (optimistic). Drop real 16 kHz mono recordings into eval/audio/<id>.wav for realistic numbers.",
+    "Small n and live-API variance: quote p50/p95 together with n.",
+    "The LLM judge is a second opinion only."
+  ],
+  "results": {
+    "interrupt": {
+      "summary": {
+        "n": 3,
+        "interrupted_rate": 1.0,
+        "context_after_cut_rate": 1.0,
+        "interrupt_signal_p50_s": 0.13663009996525943,
+        "interrupt_signal_p95_s": 0.1410040999762714,
+        "definition": "seconds from sending the interrupting turn to the server's interrupted flag"
+      },
+      "rows": [
+        {
+          "trial": 0,
+          "got_audio_first": true,
+          "interrupted": true,
+          "interrupt_signal_s": 0.13663009996525943,
+          "context_ok": true,
+          "reply": "Stopped. You asked for a story about a lighthouse keeper."
+        },
+        {
+          "trial": 1,
+          "got_audio_first": true,
+          "interrupted": true,
+          "interrupt_signal_s": 0.1410040999762714,
+          "context_ok": true,
+          "reply": "Stopped. A story about a lighthouse keeper."
+        },
+        {
+          "trial": 2,
+          "got_audio_first": true,
+          "interrupted": true,
+          "interrupt_signal_s": 0.1337257000268437,
+          "context_ok": true,
+          "reply": "Stopped. You asked for a story about a lighthouse keeper."
+        }
+      ]
+    }
+  }
+}

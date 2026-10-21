@@ -1,0 +1,10 @@
+.venv/
+.env
+__pycache__/
+node_modules/
+spikes/audio/
+.dev.vars
+.wrangler/
+dist/
+eval/audio/
+eval/results/

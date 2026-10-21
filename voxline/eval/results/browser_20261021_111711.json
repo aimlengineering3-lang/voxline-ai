@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-21T06:15:33.684033+00:00",
+  "url": "http://localhost:5173",
+  "typed_turn_failures": 0,
+  "ttfa": {
+    "text": {
+      "n": 9,
+      "p50_ms": 602.8000000715256,
+      "p95_ms": 649.6999999284744
+    },
+    "voice": {
+      "n": 0,
+      "p50_ms": null,
+      "p95_ms": null
+    }
+  },
+  "fault_injection": {
+    "n": 3,
+    "recovery_rate": 1.0,
+    "context_kept_rate": 1.0,
+    "rows": [
+      {
+        "recovered": true,
+        "context_kept": true
+      },
+      {
+        "recovered": true,
+        "context_kept": true
+      },
+      {
+        "recovered": true,
+        "context_kept": true
+      }
+    ]
+  },
+  "voice_turn": {
+    "ok": false,
+    "error": "Page.wait_for_function: Timeout 30000ms exceeded."
+  },
+  "client_summary": {
+    "turns": 9,
+    "ttfaLast": 513.2000000476837,
+    "ttfaP50": 602.8000000715256,
+    "ttfaP95": 649.6999999284744,
+    "clearLast": null,
+    "interrupts": 0,
+    "reconnects": 3,
+    "skipped": 0,
+    "errors": 0,
+    "fallbacks": 0
+  },
+  "caveats": [
+    "Fake microphone loops one wav file; single machine, single network. Quote n with every number."
+  ]
+}

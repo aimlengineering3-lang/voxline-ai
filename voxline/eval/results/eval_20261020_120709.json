@@ -1,0 +1,115 @@
+{
+  "date": "2026-10-20T07:04:37.584499+00:00",
+  "models": {
+    "live": "gemini-3.8-live",
+    "judge": "gemini-3.8-flash"
+  },
+  "caveats": [
+    "WER uses synthetic speech from the same model family (optimistic). Drop real 16 kHz mono recordings into eval/audio/<id>.wav for realistic numbers.",
+    "Small n and live-API variance: quote p50/p95 together with n.",
+    "The LLM judge is a second opinion only."
+  ],
+  "results": {
+    "context": {
+      "summary": {
+        "turns": 8,
+        "checks_passed": 9,
+        "checks_total": 9,
+        "judge_mean": 5.0,
+        "judge_n": 1,
+        "judge_note": "LLM judge is a second opinion; deterministic checks come first"
+      },
+      "rows": [
+        {
+          "case": "c1_memory",
+          "turn": 0,
+          "say": "My favorite color is teal. Please remember it.",
+          "reply": "Got it! I've noted that your favorite color is teal.",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.6770323000382632,
+          "judge": null
+        },
+        {
+          "case": "c1_memory",
+          "turn": 1,
+          "say": "Tell me one fun fact about the ocean.",
+          "reply": "More than 80 percent of the ocean remains unmapped and unexplored by humans.",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.5087661000434309,
+          "judge": null
+        },
+        {
+          "case": "c1_memory",
+          "turn": 2,
+          "say": "What is my favorite color?",
+          "reply": "Your favorite color is teal.",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.5684767999919131,
+          "judge": null
+        },
+        {
+          "case": "c2_simplify_repeat",
+          "turn": 0,
+          "say": "In one sentence, what is DNS?",
+          "reply": "DNS is the internet's phonebook that translates readable domain names into IP addresses computers understand.",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.5938456000294536,
+          "judge": null
+        },
+        {
+          "case": "c2_simplify_repeat",
+          "turn": 1,
+          "say": "Explain that more simply.",
+          "reply": "It matches website names like google.com to the numbers computers use to locate them.",
+          "checks": [
+            true,
+            true
+          ],
+          "ttfa_s": 0.6026966999634169,
+          "judge": null
+        },
+        {
+          "case": "c2_simplify_repeat",
+          "turn": 2,
+          "say": "Repeat that.",
+          "reply": "It matches website names like google.com to the numbers computers use to locate them.",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.5758637000108138,
+          "judge": null
+        },
+        {
+          "case": "c3_go_deeper",
+          "turn": 0,
+          "say": "I'm planning a trip to Lisbon next month.",
+          "reply": "That sounds amazing! Lisbon is a beautiful city. What kind of things are you hoping to do or see there?",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.6356316999881528,
+          "judge": null
+        },
+        {
+          "case": "c3_go_deeper",
+          "turn": 1,
+          "say": "Go deeper on what I should pack.",
+          "reply": "Pack comfortable walking shoes for those hilly streets. Bring layers, like a light jacket, because the weather can change. Also, a hat and sunscreen for the sun, and something a bit nicer for dining out.",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.5810997000080533,
+          "judge": 5
+        }
+      ]
+    }
+  }
+}

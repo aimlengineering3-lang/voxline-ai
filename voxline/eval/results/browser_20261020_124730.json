@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-20T07:46:04.419820+00:00",
+  "url": "http://localhost:5173",
+  "typed_turn_failures": 0,
+  "ttfa": {
+    "text": {
+      "n": 7,
+      "p50_ms": 632.7000000476837,
+      "p95_ms": 777.6000000238419
+    },
+    "voice": {
+      "n": 0,
+      "p50_ms": null,
+      "p95_ms": null
+    }
+  },
+  "fault_injection": {
+    "n": 3,
+    "recovery_rate": 1.0,
+    "context_kept_rate": 1.0,
+    "rows": [
+      {
+        "recovered": true,
+        "context_kept": true
+      },
+      {
+        "recovered": true,
+        "context_kept": true
+      },
+      {
+        "recovered": true,
+        "context_kept": true
+      }
+    ]
+  },
+  "voice_turn": null,
+  "client_summary": {
+    "turns": 7,
+    "ttfaLast": 507.9000000357628,
+    "ttfaP50": 632.7000000476837,
+    "ttfaP95": 777.6000000238419,
+    "clearLast": null,
+    "interrupts": 0,
+    "reconnects": 3,
+    "skipped": 0,
+    "errors": 0,
+    "fallbacks": 0
+  },
+  "caveats": [
+    "Fake microphone loops one wav file; single machine, single network. Quote n with every number."
+  ]
+}

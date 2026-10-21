@@ -1,0 +1,209 @@
+{
+  "date": "2026-10-17T07:28:46.350049+00:00",
+  "models": {
+    "live": "gemini-3.8-live",
+    "judge": "gemini-3.8-flash"
+  },
+  "caveats": [
+    "WER uses synthetic speech from the same model family (optimistic). Drop real 16 kHz mono recordings into eval/audio/<id>.wav for realistic numbers.",
+    "Small n and live-API variance: quote p50/p95 together with n.",
+    "The LLM judge is a second opinion only."
+  ],
+  "results": {
+    "wer": {
+      "summary": {
+        "n": 5,
+        "mean_wer": 1.0,
+        "empty_rate": 1.0,
+        "skipped_rate": 1.0,
+        "ttfa_p50_s": null,
+        "ttfa_p95_s": null,
+        "ttfa_definition": "seconds from audio_stream_end to first audio chunk"
+      },
+      "rows": [
+        {
+          "id": "w1",
+          "reference": "what is the capital of france and why is it famous",
+          "hypothesis": "",
+          "wer": 1.0,
+          "empty": true,
+          "ttfa_s": null,
+          "answered": false
+        },
+        {
+          "id": "w2",
+          "reference": "explain how a websocket differs from a normal http request",
+          "hypothesis": "",
+          "wer": 1.0,
+          "empty": true,
+          "ttfa_s": null,
+          "answered": false
+        },
+        {
+          "id": "w3",
+          "reference": "can you give me three tips for preparing for a job interview",
+          "hypothesis": "",
+          "wer": 1.0,
+          "empty": true,
+          "ttfa_s": null,
+          "answered": false
+        },
+        {
+          "id": "w4",
+          "reference": "how many days are there in a leap year",
+          "hypothesis": "",
+          "wer": 1.0,
+          "empty": true,
+          "ttfa_s": null,
+          "answered": false
+        },
+        {
+          "id": "w5",
+          "reference": "please summarize the main idea of machine learning in one sentence",
+          "hypothesis": "",
+          "wer": 1.0,
+          "empty": true,
+          "ttfa_s": null,
+          "answered": false
+        }
+      ]
+    },
+    "context": {
+      "summary": {
+        "turns": 8,
+        "checks_passed": 9,
+        "checks_total": 9,
+        "judge_mean": 5.0,
+        "judge_n": 1,
+        "judge_note": "LLM judge is a second opinion; deterministic checks come first"
+      },
+      "rows": [
+        {
+          "case": "c1_memory",
+          "turn": 0,
+          "say": "My favorite color is teal. Please remember it.",
+          "reply": "Got it! I'll remember that your favorite color is teal.",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.6340133000048809,
+          "judge": null
+        },
+        {
+          "case": "c1_memory",
+          "turn": 1,
+          "say": "Tell me one fun fact about the ocean.",
+          "reply": "More than 80% of the ocean is completely unmapped and unexplored by humans.",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.5497285000164993,
+          "judge": null
+        },
+        {
+          "case": "c1_memory",
+          "turn": 2,
+          "say": "What is my favorite color?",
+          "reply": "Your favorite color is teal.",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.7618263999756891,
+          "judge": null
+        },
+        {
+          "case": "c2_simplify_repeat",
+          "turn": 0,
+          "say": "In one sentence, what is DNS?",
+          "reply": "DNS is like the phonebook of the internet, translating human-friendly domain names into numerical IP addresses that computers use to find each other.",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.6742270000104327,
+          "judge": null
+        },
+        {
+          "case": "c2_simplify_repeat",
+          "turn": 1,
+          "say": "Explain that more simply.",
+          "reply": "It translates website names you type into the numbers computers use to connect to them.",
+          "checks": [
+            true,
+            true
+          ],
+          "ttfa_s": 0.8218202999851201,
+          "judge": null
+        },
+        {
+          "case": "c2_simplify_repeat",
+          "turn": 2,
+          "say": "Repeat that.",
+          "reply": "It translates website names you type into the numbers computers use to connect to them.",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 1.3324273000180256,
+          "judge": null
+        },
+        {
+          "case": "c3_go_deeper",
+          "turn": 0,
+          "say": "I'm planning a trip to Lisbon next month.",
+          "reply": "That sounds exciting! Lisbon is a fantastic city. Is there anything specific you need help with, like recommendations or travel tips?",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.6753762999724131,
+          "judge": null
+        },
+        {
+          "case": "c3_go_deeper",
+          "turn": 1,
+          "say": "Go deeper on what I should pack.",
+          "reply": "Pack layers since the weather can be mild but unpredictable. Bring a light raincoat or jacket, an umbrella, and comfortable walking shoes for the cobblestone streets. Don't forget a plug adapter!",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.8466922999941744,
+          "judge": 5
+        }
+      ]
+    },
+    "interrupt": {
+      "summary": {
+        "n": 3,
+        "interrupted_rate": 1.0,
+        "context_after_cut_rate": 0.0,
+        "interrupt_signal_p50_s": 0.14918429998215288,
+        "interrupt_signal_p95_s": 0.19745599999441765,
+        "definition": "seconds from sending the interrupting turn to the server's interrupted flag"
+      },
+      "rows": [
+        {
+          "trial": 0,
+          "got_audio_first": true,
+          "interrupted": true,
+          "interrupt_signal_s": 0.19745599999441765,
+          "context_ok": false,
+          "reply": ""
+        },
+        {
+          "trial": 1,
+          "got_audio_first": true,
+          "interrupted": true,
+          "interrupt_signal_s": 0.14154559999587946,
+          "context_ok": false,
+          "reply": ""
+        },
+        {
+          "trial": 2,
+          "got_audio_first": true,
+          "interrupted": true,
+          "interrupt_signal_s": 0.14918429998215288,
+          "context_ok": false,
+          "reply": ""
+        }
+      ]
+    }
+  }
+}

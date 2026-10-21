@@ -1,0 +1,38 @@
+{
+  "wer": [
+    { "id": "w1", "text": "What is the capital of France and why is it famous?" },
+    { "id": "w2", "text": "Explain how a websocket differs from a normal HTTP request." },
+    { "id": "w3", "text": "Can you give me three tips for preparing for a job interview?" },
+    { "id": "w4", "text": "How many days are there in a leap year?" },
+    { "id": "w5", "text": "Please summarize the main idea of machine learning in one sentence." }
+  ],
+  "context": [
+    {
+      "id": "c1_memory",
+      "turns": [
+        { "say": "My favorite color is teal. Please remember it.", "checks": [{ "type": "non_empty" }] },
+        { "say": "Tell me one fun fact about the ocean.", "checks": [{ "type": "non_empty" }] },
+        { "say": "What is my favorite color?", "checks": [{ "type": "contains_any", "terms": ["teal"] }] }
+      ]
+    },
+    {
+      "id": "c2_simplify_repeat",
+      "turns": [
+        { "say": "In one sentence, what is DNS?", "checks": [{ "type": "non_empty" }] },
+        { "say": "Explain that more simply.", "checks": [{ "type": "non_empty" }, { "type": "max_words", "n": 45 }] },
+        { "say": "Repeat that.", "checks": [{ "type": "similar_to_previous", "min_ratio": 0.5 }] }
+      ]
+    },
+    {
+      "id": "c3_go_deeper",
+      "turns": [
+        { "say": "I'm planning a trip to Lisbon next month.", "checks": [{ "type": "non_empty" }] },
+        {
+          "say": "Go deeper on what I should pack.",
+          "checks": [{ "type": "contains_any", "terms": ["pack", "jacket", "shoes", "clothes", "layers", "umbrella", "sunscreen"] }],
+          "judge": "The reply gives more specific detail about packing for a trip to Lisbon than a one-line answer would."
+        }
+      ]
+    }
+  ]
+}

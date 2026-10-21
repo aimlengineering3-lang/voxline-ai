@@ -1,0 +1,214 @@
+{
+  "date": "2026-10-21T05:48:41.447496+00:00",
+  "models": {
+    "live": "gemini-3.8-live",
+    "judge": "gemini-3.8-flash"
+  },
+  "caveats": [
+    "WER uses synthetic speech from the same model family (optimistic). Drop real 16 kHz mono recordings into eval/audio/<id>.wav for realistic numbers.",
+    "Small n and live-API variance: quote p50/p95 together with n.",
+    "The LLM judge is a second opinion only."
+  ],
+  "results": {
+    "wer": {
+      "summary": {
+        "n": 5,
+        "mean_wer": 0.0,
+        "empty_rate": 0.0,
+        "skipped_rate": 0.0,
+        "ttfa_p50_s": 0.9620725999120623,
+        "ttfa_p95_s": 1.1535091999685392,
+        "ttfa_definition": "seconds from the end of the spoken audio (before the trailing silence) to the first audio chunk"
+      },
+      "rows": [
+        {
+          "id": "w1",
+          "reference": "what is the capital of france and why is it famous",
+          "hypothesis": "what is the capital of france and why is it famous",
+          "wer": 0.0,
+          "empty": false,
+          "ttfa_s": 0.8746977000264451,
+          "answered": true,
+          "audio_s": 9.600041666666666
+        },
+        {
+          "id": "w2",
+          "reference": "explain how a websocket differs from a normal http request",
+          "hypothesis": "explain how a websocket differs from a normal http request",
+          "wer": 0.0,
+          "empty": false,
+          "ttfa_s": 1.1535091999685392,
+          "answered": true,
+          "audio_s": 14.580041666666666
+        },
+        {
+          "id": "w3",
+          "reference": "can you give me three tips for preparing for a job interview",
+          "hypothesis": "can you give me three tips for preparing for a job interview",
+          "wer": 0.0,
+          "empty": false,
+          "ttfa_s": 0.9741557000670582,
+          "answered": true,
+          "audio_s": 9.63
+        },
+        {
+          "id": "w4",
+          "reference": "how many days are there in a leap year",
+          "hypothesis": "how many days are there in a leap year",
+          "wer": 0.0,
+          "empty": false,
+          "ttfa_s": 0.9620725999120623,
+          "answered": true,
+          "audio_s": 3.14
+        },
+        {
+          "id": "w5",
+          "reference": "please summarize the main idea of machine learning in one sentence",
+          "hypothesis": "please summarize the main idea of machine learning in one sentence",
+          "wer": 0.0,
+          "empty": false,
+          "ttfa_s": 0.9472936000674963,
+          "answered": true,
+          "audio_s": 8.03
+        }
+      ]
+    },
+    "context": {
+      "summary": {
+        "turns": 8,
+        "checks_passed": 9,
+        "checks_total": 9,
+        "judge_mean": 5.0,
+        "judge_n": 1,
+        "judge_note": "LLM judge is a second opinion; deterministic checks come first"
+      },
+      "rows": [
+        {
+          "case": "c1_memory",
+          "turn": 0,
+          "say": "My favorite color is teal. Please remember it.",
+          "reply": "Got it! I've noted that your favorite color is teal.",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.7182083999505267,
+          "judge": null
+        },
+        {
+          "case": "c1_memory",
+          "turn": 1,
+          "say": "Tell me one fun fact about the ocean.",
+          "reply": "More than eighty percent of the ocean remains unmapped and unexplored by humans.",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.632184199988842,
+          "judge": null
+        },
+        {
+          "case": "c1_memory",
+          "turn": 2,
+          "say": "What is my favorite color?",
+          "reply": "Your favorite color is teal.",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.7801254999358207,
+          "judge": null
+        },
+        {
+          "case": "c2_simplify_repeat",
+          "turn": 0,
+          "say": "In one sentence, what is DNS?",
+          "reply": "DNS is like a phonebook for the internet that translates human-readable names, like website addresses, into IP addresses that computers understand.",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.6500874999910593,
+          "judge": null
+        },
+        {
+          "case": "c2_simplify_repeat",
+          "turn": 1,
+          "say": "Explain that more simply.",
+          "reply": "It's the system that turns website names you type into the numbers computers use to find that site.",
+          "checks": [
+            true,
+            true
+          ],
+          "ttfa_s": 1.0399393999250606,
+          "judge": null
+        },
+        {
+          "case": "c2_simplify_repeat",
+          "turn": 2,
+          "say": "Repeat that.",
+          "reply": "It's the system that turns website names you type into the numbers computers use to find that site.",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.5635133000323549,
+          "judge": null
+        },
+        {
+          "case": "c3_go_deeper",
+          "turn": 0,
+          "say": "I'm planning a trip to Lisbon next month.",
+          "reply": "That sounds amazing! Lisbon is a beautiful city. Are you looking for recommendations on places to see, or maybe some food spots?",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.5302609999198467,
+          "judge": null
+        },
+        {
+          "case": "c3_go_deeper",
+          "turn": 1,
+          "say": "Go deeper on what I should pack.",
+          "reply": "Pack very comfortable walking shoes, as the city is hilly and has lots of cobblestones. Also, bring layers, like a light jacket, since the weather can change quickly. Don't forget a rain jacket and sun protection.",
+          "checks": [
+            true
+          ],
+          "ttfa_s": 0.616504600038752,
+          "judge": 5
+        }
+      ]
+    },
+    "interrupt": {
+      "summary": {
+        "n": 3,
+        "interrupted_rate": 1.0,
+        "context_after_cut_rate": 1.0,
+        "interrupt_signal_p50_s": 0.14709660003427416,
+        "interrupt_signal_p95_s": 0.15164219995494932,
+        "definition": "seconds from sending the interrupting turn to the server's interrupted flag"
+      },
+      "rows": [
+        {
+          "trial": 0,
+          "got_audio_first": true,
+          "interrupted": true,
+          "interrupt_signal_s": 0.14709660003427416,
+          "context_ok": true,
+          "reply": "Stopped. You asked me to tell you a detailed story about a lighthouse keeper."
+        },
+        {
+          "trial": 1,
+          "got_audio_first": true,
+          "interrupted": true,
+          "interrupt_signal_s": 0.15164219995494932,
+          "context_ok": true,
+          "reply": "Stopped. You asked for a story about a lighthouse keeper."
+        },
+        {
+          "trial": 2,
+          "got_audio_first": true,
+          "interrupted": true,
+          "interrupt_signal_s": 0.13841270003467798,
+          "context_ok": true,
+          "reply": "Stopped. You asked me to tell a story about a lighthouse keeper."
+        }
+      ]
+    }
+  }
+}

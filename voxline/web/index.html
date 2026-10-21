@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voxline</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>Voxline</h1>
+        <div class="controls">
+          <select id="voice">
+            <option value="Achird">Achird (Friendly)</option>
+            <option value="Kore">Kore (Firm)</option>
+            <option value="Schedar">Schedar (Even)</option>
+            <option value="Sulafat">Sulafat (Warm)</option>
+          </select>
+          <label class="speak"><input type="checkbox" id="speak" checked /> Speak replies</label>
+          <button id="connect">Connect</button>
+          <span id="status" class="status">Disconnected</span>
+        </div>
+      </header>
+
+      <div class="chatbar">
+        <select id="chats" aria-label="Saved chats"></select>
+        <button id="newchat">New chat</button>
+        <button id="delchat" class="secondary">Delete</button>
+      </div>
+
+      <section id="transcript" class="transcript" aria-live="polite"></section>
+
+      <div class="composer">
+        <input
+          id="text"
+          type="text"
+          maxlength="500"
+          placeholder="Type a message..."
+          autocomplete="off"
+          disabled
+        />
+        <button id="mic" disabled>Start mic</button>
+        <button id="send" disabled>Send</button>
+      </div>
+
+      <div id="metrics" class="metrics" aria-label="Latency metrics"></div>
+      <p class="disclosure">
+        Free-tier notice: Google may use content sent through the free Gemini API tier to improve its
+        products, so please don't share sensitive information. Voxline does not store audio. Your chat
+        text is saved only in this browser (you can delete it any time); the server logs only anonymous
+        timing metrics. Headphones recommended.
+      </p>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
